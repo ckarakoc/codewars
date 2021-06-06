@@ -14,3 +14,8 @@ def ext(proglang='text', file='extensions.json'):
 			if str(extension['name']).lower() == proglang.lower():
 				return extension['extensions']
 		return ['']
+
+
+def revert():
+	# Revert the changes made if an error occurs by reading the log file
+	pass

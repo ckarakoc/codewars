@@ -1,5 +1,7 @@
 import argparse
+import logging
 import os
+from logging import info, debug, warning, critical, error
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -7,6 +9,11 @@ from selenium import webdriver
 from utility import ext
 
 url = 'https://ckarakoc.github.io' or 'https://www.codewars.com/kata/59e49b2afc3c494d5d00002a'
+logging.basicConfig(
+	filename='./logs/codewars.log',
+	level=logging.DEBUG,
+	format='%(asctime)s.%(msecs)03d | %(levelname)s | %(module)s | %(message)s',
+	datefmt='%Y-%m-%d %H:%M:%S')
 driver = None
 
 parser = argparse.ArgumentParser()
@@ -18,16 +25,17 @@ driver_type = args.driver
 try:
 	driver_type = driver_type if os.path.isfile(f'./drivers/{driver_type}.exe') else ''
 	if driver_type == 'chromedriver':
-		print('Chrome chosen.')
+		info('Chrome chosen.')
 		options = webdriver.ChromeOptions()
 		options.headless = True
 		driver = webdriver.Chrome(executable_path='./drivers/chromedriver.exe', options=options)
 	elif driver_type == 'geckodriver':
-		print(f'Firefox chosen.')
+		info(f'Firefox chosen.')
 		options = webdriver.FirefoxOptions()
 		options.headless = True
 		driver = webdriver.Firefox(executable_path='./drivers/geckodriver.exe', options=options)
 	else:
+		error(f'unknown driver_type: {driver_type}')
 		raise Exception('You should either download geckodriver or chromedriver and put in in the ./drivers folder.')
 
 	driver.get(url)
@@ -49,5 +57,6 @@ try:
 finally:
 	if driver is not None:
 		driver.quit()
+	info('Program exited')
 
 # noteworthy css classes: .CodeMirror-code
