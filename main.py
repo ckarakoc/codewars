@@ -1,25 +1,53 @@
-import requests
+import argparse
+import os
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-# res = requests.get(url, timeout=(3.05, 27))
-#
-# soup = BeautifulSoup(res.content, 'html.parser')
-# title_div = soup.find('div', {'class': 'bg-ui-section'})
-#
-# description = soup.find('div', {'id': 'description'})
-# print(description)
-# print(soup.select('h4'))
+from utility import ext
 
-url = 'https://www.codewars.com/kata/59e49b2afc3c494d5d00002a'
+url = 'https://ckarakoc.github.io' or 'https://www.codewars.com/kata/59e49b2afc3c494d5d00002a'
+driver = None
 
-options = webdriver.ChromeOptions()
-options.headless = True
-# options.add_argument('window-size=1920x1080')
-driver = webdriver.Chrome(executable_path='./chromedriver.exe', options=options)
-driver.get(url)
+parser = argparse.ArgumentParser()
+parser.add_argument('--url', help='The codewars url')
+parser.add_argument('--driver', help='driver type (i.e. geckodriver (Firefox) | chromedriver (Chrome))', default='geckodriver')
+args = parser.parse_args()
+driver_type = args.driver
 
-soup = BeautifulSoup(driver.page_source, 'html.parser')
-description = soup.find('div', {'id': 'description'})
-with open('out.html', 'w') as f:
-	f.write(str(description.prettify()))
+try:
+	driver_type = driver_type if os.path.isfile(f'./drivers/{driver_type}.exe') else ''
+	if driver_type == 'chromedriver':
+		print('Chrome chosen.')
+		options = webdriver.ChromeOptions()
+		options.headless = True
+		driver = webdriver.Chrome(executable_path='./drivers/chromedriver.exe', options=options)
+	elif driver_type == 'geckodriver':
+		print(f'Firefox chosen.')
+		options = webdriver.FirefoxOptions()
+		options.headless = True
+		driver = webdriver.Firefox(executable_path='./drivers/geckodriver.exe', options=options)
+	else:
+		raise Exception('You should either download geckodriver or chromedriver and put in in the ./drivers folder.')
+
+	driver.get(url)
+	soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+	kyu = 'kyu_7'
+	ex = 'vowel_count'
+	proglang = 'python'
+	solution = 'sol'
+
+	path = f'./kata/{proglang}/{kyu}/{ex}/'
+	os.makedirs(os.path.dirname(path), exist_ok=True)
+
+	with open(f'{path}{solution}{ext(proglang)[0]}', 'w') as out:
+		out.write('Hello Solution2!')
+
+	with open(f'{path}README.md', 'w') as out:
+		out.write('Hello README2!')
+finally:
+	if driver is not None:
+		driver.quit()
+
+# noteworthy css classes: .CodeMirror-code
