@@ -30,7 +30,7 @@ def ext(proglang='text', file='extensions.json'):
 	with open(file) as extensions:
 		data = json.load(extensions)
 		for extension in data:
-			if str(extension['name']).lower() == proglang.lower():
+			if str(extension['lang']).lower() == proglang.lower():
 				return extension['extensions']
 		return ['']
 

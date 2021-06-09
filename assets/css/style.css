@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+}
+
+.grid-outer {
+    display: grid;
+    grid-template-columns: 15em auto 15em;
+    height: 100%;
+}
+
+.container {
+    background: whitesmoke;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    padding: 1em;
+}
+
+.heading, .description, #sol-h2, .content {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    font-family: Georgia, sans-serif;
+    font-size: 2em;
+    letter-spacing: -2px;
+}
+
+.description p {
+    font-family: Georgia, sans-serif;
+    font-size: 1.5em;
+    width: 50%;
+}
+
+.content pre code {
+    border-radius: 15px;
+}
