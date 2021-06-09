@@ -1,0 +1,6 @@
+- get the specific values:
+    - write them to html
+    - write them to markdown
+    - write them to index.html table
+- make a logout()
+- Write Tests

@@ -180,3 +180,6 @@ chromedriver.exe
 geckdriver.exe
 chromedriver.*
 geckodriver.*
+
+### Secrets ###
+config.py
