@@ -1,4 +1,0 @@
-- get the specific values:
-    - write them to markdown using jinja2
-    - write them to index.html table
-- make a logout()

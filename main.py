@@ -91,7 +91,7 @@ if __name__ == '__main__':
 			'lang': str(proglang).capitalize(),
 			'ext': str(ext(proglang)[0])[1:],
 			'kyu': str(re.sub('[^0-9]+', '', kyu)),
-			'solution': f'https://ckarakoc.github.io/{path}solution.html',
+			'solution': f'https://ckarakoc.github.io/codewars/{path}solution.html',
 			'repo': f'https://github.com/ckarakoc/codewars/tree/main/{path}',
 			'kata': str(url)
 		}
@@ -102,12 +102,12 @@ if __name__ == '__main__':
 			table_data = json.load(table)
 
 		index_html = env.get_template('home.html').render(
-			title='Celal Karakoç - Codewars completion table',
+			title='Celal Karako\xc3\xa7 - Codewars completion table',
 			table=table_data
 		)
 
 		with open(f'index.html', 'w') as out:
-			out.write(index_html)
+			out.write(str(index_html))
 
 	finally:
 		if driver is not None:

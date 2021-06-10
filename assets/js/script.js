@@ -1,3 +1,4 @@
+// TODO: this doesn't work properly yet
 window.onload = () => {
     const table = document.getElementById('sortable_table');
     const headers = table.querySelectorAll('th');
@@ -8,13 +9,11 @@ window.onload = () => {
     [].forEach.call(headers, (header, index) => {
         header.addEventListener('click', () => {
             sortColumn(index);
-            console.log(header);
         });
     });
 
     const sortColumn = function (index) {
         const newRows = Array.from(rows);
-        console.log(newRows);
         newRows.sort((rowA, rowB) => {
             const cellA = rowA.querySelectorAll('td')[index].innerHTML;
             const cellB = rowB.querySelectorAll('td')[index].innerHTML;
@@ -27,7 +26,6 @@ window.onload = () => {
                 return 0;
             }
         });
-        console.log(newRows);
 
         [].forEach.call(rows, row => {
             tableBody.removeChild(row);
