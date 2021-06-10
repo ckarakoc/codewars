@@ -20,7 +20,7 @@ def setup_logger(name='codewars', log_file='./logs/codewars.log', level=logging.
 	return logger
 
 
-def ext(proglang='text', file='extensions.json'):
+def ext(proglang='text', file='assets/json/extensions.json'):
 	"""
 	Returns an array of extensions used for the `proglang`.
 	:param proglang: The programming language
@@ -65,3 +65,20 @@ def login(driver):
 def revert():
 	# Revert the changes made if an error occurs by reading the log file
 	pass
+
+
+def update_table_json(entry):
+	"""
+	Inserts
+	:param entry: json object to insert into the json array
+	:return: True if it was inserted, False otherwise
+	"""
+	with open('assets/json/table.json') as table:
+		data = json.load(table)
+
+	if entry not in data:
+		data.append(entry)
+		with open('assets/json/table.json', 'w') as table:
+			json.dump(data, table)
+			return True
+	return False

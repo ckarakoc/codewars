@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 import time
 import re
@@ -7,8 +8,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from jinja2 import Environment, FileSystemLoader
 
-import config
-from utility import ext, setup_logger, login
+from utility import ext, setup_logger, login, update_table_json
 
 if __name__ == '__main__':
 	logger = setup_logger()
@@ -57,15 +57,18 @@ if __name__ == '__main__':
 		ex = '_'.join(re.sub('[^0-9a-zA-Z ]+', '', soup_game_title.find('h4').text.lower()).split())
 
 		title = soup_game_title.find('h4').text
-		description = soup.find(id='description').text
+		description = soup.find(id='description')
+		description.attrs.clear()
 		solution = soup.find('li', {'data-tab': 'solutions'}).find_all('pre', {'lang': proglang})[-1]
+		solution.attrs.clear()
 
-		path = f'./kata/{proglang}/{kyu}/{ex}/'
+		path = f'kata/{proglang}/{kyu}/{ex}/'
 		os.makedirs(os.path.dirname(path), exist_ok=True)
 
 		# Make the HTML page
 		_html = env.get_template('template.html').render(
 			title=title,
+			url=url,
 			description=description,
 			solution=solution
 		)
@@ -78,9 +81,33 @@ if __name__ == '__main__':
 			out.write(str(solution.text))
 
 		# Make the Markdown page
-		_markdown = f'# {title}\n## Description\n{description}\n<details><summary>Solution</summary>\n{solution.prettify()}\n</details>'
+		_markdown = f'# [{title}]({url})\n## Description\n{description}\n<details><summary>Solution</summary>\n{solution.prettify()}\n</details>'
 		with open(f'{path}README.md', 'w') as out:
 			out.write(str(_markdown))
+
+		# Make the index.html page
+		entry = {
+			'title': str(title),
+			'lang': str(proglang).capitalize(),
+			'kyu': str(re.sub('[^0-9]+', '', kyu)),
+			'solution': f'https://ckarakoc.github.io/{path}solution.html',
+			'repo': f'https://github.com/ckarakoc/codewars/tree/main/{path}'
+		}
+
+		update_table_json(entry)
+
+		with open('assets/json/table.json') as table:
+			table_data = json.load(table)
+
+		index_html = env.get_template('home.html').render(
+			title='Celal Karakoç - Codewars completion table',
+			table=table_data,
+			ext=ext(proglang)[0]
+		)
+
+		with open(f'index.html', 'w') as out:
+			out.write(index_html)
+
 	finally:
 		if driver is not None:
 			logger.info('Quiting driver')

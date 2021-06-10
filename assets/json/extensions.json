@@ -33,6 +33,14 @@
     ]
   },
   {
+    "name": "Java",
+    "type": "programming",
+    "lang": "java",
+    "extensions": [
+      ".java"
+    ]
+  },
+  {
     "name": "JavaScript",
     "type": "programming",
     "lang": "javascript",

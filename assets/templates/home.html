@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+<div class="content">
+    <table id="sortable_table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Kyu</th>
+            <th>Solution</th>
+            <th>Repository</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in table %}
+        <tr>
+            <td>{{ data['title'] }}</td>
+            <td>{{ data['lang'] }}</td>
+            <td>{{ data['kyu'] }}</td>
+            <td><a href="{{ data['solution'] }}">html</a>, <a href="{{ data['repo'] }}solution{{ ext }}">{{ ext[1:] }}</a></td>
+            <td><a href="{{ data['repo'] }}">Github</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</div>
+</body>
+</html>
