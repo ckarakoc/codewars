@@ -80,6 +80,19 @@
     ]
   },
   {
+    "name": "Markdown",
+    "type": "prose",
+    "lang": "markdown",
+    "extensions": [
+      ".md",
+      ".markdown",
+      ".mkd",
+      ".mkdn",
+      ".mkdown",
+      ".ron"
+    ]
+  },
+  {
     "name": "Python",
     "type": "programming",
     "lang": "python",
@@ -98,6 +111,18 @@
       ".tac",
       ".wsgi",
       ".xpy"
+    ]
+  },
+  {
+    "name": "Text",
+    "type": "prose",
+    "lang": "text",
+    "extensions": [
+      ".txt",
+      ".fr",
+      ".nb",
+      ".ncl",
+      ".no"
     ]
   }
 ]

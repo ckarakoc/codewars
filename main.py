@@ -81,7 +81,7 @@ if __name__ == '__main__':
 			out.write(str(solution.text))
 
 		# Make the Markdown page
-		_markdown = f'# [{title}]({url})\n## Description\n{description}\n<details><summary>Solution</summary>\n{solution.prettify()}\n</details>'
+		_markdown = f'# [{title}]({url})\n## Description\n{description}\n<details><summary>Solution</summary>{solution.prettify()}</details>'
 		with open(f'{path}README.md', 'w') as out:
 			out.write(str(_markdown))
 
@@ -89,9 +89,11 @@ if __name__ == '__main__':
 		entry = {
 			'title': str(title),
 			'lang': str(proglang).capitalize(),
+			'ext': str(ext(proglang)[0])[1:],
 			'kyu': str(re.sub('[^0-9]+', '', kyu)),
 			'solution': f'https://ckarakoc.github.io/{path}solution.html',
-			'repo': f'https://github.com/ckarakoc/codewars/tree/main/{path}'
+			'repo': f'https://github.com/ckarakoc/codewars/tree/main/{path}',
+			'kata': str(url)
 		}
 
 		update_table_json(entry)
@@ -101,8 +103,7 @@ if __name__ == '__main__':
 
 		index_html = env.get_template('home.html').render(
 			title='Celal Karakoç - Codewars completion table',
-			table=table_data,
-			ext=ext(proglang)[0]
+			table=table_data
 		)
 
 		with open(f'index.html', 'w') as out:
