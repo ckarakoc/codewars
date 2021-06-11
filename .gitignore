@@ -183,4 +183,9 @@ geckodriver.*
 
 ### Secrets ###
 config.py
-logs/
+
+drivers/*
+!/drivers/README.md
+
+logs/*
+!/logs/README.md
