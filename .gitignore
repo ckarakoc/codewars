@@ -183,3 +183,4 @@ geckodriver.*
 
 ### Secrets ###
 config.py
+logs/

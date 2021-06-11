@@ -15,7 +15,7 @@ if __name__ == '__main__':
 	driver = None
 
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--url', help='The codewars url', default='https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/javascript')
+	parser.add_argument('--url', help='The codewars url', default='https://www.codewars.com/kata/585a1a227cb58d8d740001c3/train/python')
 	parser.add_argument('--driver', help='driver type (i.e. geckodriver (Firefox) | chromedriver (Chrome))', default='geckodriver')
 	parser.add_argument('--headless', action='store_true')
 	args = parser.parse_args()

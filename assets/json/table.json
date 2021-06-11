@@ -16,5 +16,14 @@
     "solution": "https://ckarakoc.github.io/codewars/kata/javascript/kyu_8/remove_first_and_last_character/solution.html",
     "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/javascript/kyu_8/remove_first_and_last_character/",
     "kata": "https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/javascript"
+  },
+  {
+    "title": "Thinkful - String Drills: Repeater",
+    "lang": "Python",
+    "ext": "py",
+    "kyu": "7",
+    "solution": "https://ckarakoc.github.io/codewars/kata/python/kyu_7/thinkful_string_drills_repeater/solution.html",
+    "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/python/kyu_7/thinkful_string_drills_repeater/",
+    "kata": "https://www.codewars.com/kata/585a1a227cb58d8d740001c3/train/python"
   }
 ]
