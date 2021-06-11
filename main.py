@@ -9,13 +9,14 @@ from selenium import webdriver
 from jinja2 import Environment, FileSystemLoader
 
 from utility import ext, setup_logger, login, update_table_json
+import config
 
 if __name__ == '__main__':
 	logger = setup_logger()
 	driver = None
 
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--url', help='The codewars url', default='https://www.codewars.com/kata/585a1a227cb58d8d740001c3/train/python')
+	parser.add_argument('--url', help='The codewars url: https://www.codewars.com/kata/<some hash>/train/<some programming language>')
 	parser.add_argument('--driver', help='driver type (i.e. geckodriver (Firefox) | chromedriver (Chrome))', default='geckodriver')
 	parser.add_argument('--headless', action='store_true')
 	args = parser.parse_args()
@@ -91,8 +92,8 @@ if __name__ == '__main__':
 			'lang': str(proglang).capitalize(),
 			'ext': str(ext(proglang)[0])[1:],
 			'kyu': str(re.sub('[^0-9]+', '', kyu)),
-			'solution': f'https://ckarakoc.github.io/codewars/{path}solution.html',
-			'repo': f'https://github.com/ckarakoc/codewars/tree/main/{path}',
+			'solution': f'{getattr(config, "GITHUB_PAGES_URL")}/codewars/{path}solution.html',
+			'repo': f'{getattr(config, "GITHUB_REPO_URL")}/codewars/tree/main/{path}',
 			'kata': str(url)
 		}
 
@@ -102,7 +103,7 @@ if __name__ == '__main__':
 			table_data = json.load(table)
 
 		index_html = env.get_template('home.html').render(
-			title='Celal Karako\xc3\xa7 - Codewars completion table',
+			title=f'{getattr(config, "HOME_PAGE_TITLE")}',
 			table=table_data
 		)
 
