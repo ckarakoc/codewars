@@ -17,4 +17,5 @@ The `extensions.json` file in `assets\json\ ` does not support all programming l
 run `python main.py --url <url> --driver <'geckodriver' or 'chromedriver'> --headless`
 
 ## TODO
-Implement logging properly 
+- Implement logging properly
+- Add 404 page iwth 404favicon.ico
