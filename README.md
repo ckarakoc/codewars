@@ -31,8 +31,18 @@ Modify the `assets/templates/home.html` to not include the `buymeacoffee` script
 
 `python main.py --url <url> --driver <'geckodriver' or 'chromedriver'> --headless`
 
+`--url` = `https://www.codewars.com/kata/<some hash>/train/<some programming language>`
+
+Example usage: `python main.py --url 'https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/python' --driver 'geckodriver' --headless`
+
+## Result 
+
+![codewarsgif](assets/images/codewars.gif)
+
 ## TODO
 
 - Implement logging properly
+<br>
+<br>
 
 <a href="https://www.buymeacoffee.com/ckarakoc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
