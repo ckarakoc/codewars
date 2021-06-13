@@ -44,5 +44,9 @@ table a:active, table a:visited {
 }
 
 .bmc-btn-container {
-    float: right;
+	position: fixed;
+	float: right;
+	bottom: 0;
+	right: 0;
+	margin: 0.5em;
 }
