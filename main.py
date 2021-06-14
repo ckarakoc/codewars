@@ -107,7 +107,7 @@ if __name__ == '__main__':
 			table=table_data
 		)
 
-		with open(f'index.html', 'w') as out:
+		with open(f'index.html', 'w', encoding='utf-8') as out:
 			out.write(str(index_html))
 
 	finally:

@@ -25,5 +25,14 @@
     "solution": "https://ckarakoc.github.io/codewars/kata/python/kyu_7/thinkful_string_drills_repeater/solution.html",
     "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/python/kyu_7/thinkful_string_drills_repeater/",
     "kata": "https://www.codewars.com/kata/585a1a227cb58d8d740001c3/train/python"
+  },
+  {
+    "title": "Complementary DNA",
+    "lang": "Python",
+    "ext": "py",
+    "kyu": "7",
+    "solution": "https://ckarakoc.github.io/codewars/kata/python/kyu_7/complementary_dna/solution.html",
+    "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/python/kyu_7/complementary_dna/",
+    "kata": "https://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/python"
   }
 ]

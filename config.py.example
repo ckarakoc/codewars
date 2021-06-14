@@ -2,6 +2,6 @@ CW_USERNAME = <Codewars Username Here>
 CW_PASSWORD = <Codewars Password Here>
 
 GITHUB_PAGES_URL = 'https://<GITHUB USERNAME HERE>.github.io'
-GITHUB_REPO = 'https://github.com/<GITHUB USERNAME HERE>'
+GITHUB_REPO_URL = 'https://github.com/<GITHUB USERNAME HERE>'
 
 HOME_PAGE_TITLE = '<Name Here> - Codewars completion table'
