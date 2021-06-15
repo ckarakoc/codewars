@@ -34,5 +34,14 @@
     "solution": "https://ckarakoc.github.io/codewars/kata/python/kyu_7/complementary_dna/solution.html",
     "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/python/kyu_7/complementary_dna/",
     "kata": "https://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/python"
+  },
+  {
+    "title": "The highest profit wins!",
+    "lang": "Python",
+    "ext": "py",
+    "kyu": "7",
+    "solution": "https://ckarakoc.github.io/codewars/kata/python/kyu_7/the_highest_profit_wins/solution.html",
+    "repo": "https://github.com/ckarakoc/codewars/tree/main/kata/python/kyu_7/the_highest_profit_wins/",
+    "kata": "https://www.codewars.com/kata/559590633066759614000063/train/python"
   }
 ]

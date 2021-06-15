@@ -1,0 +1,40 @@
+# [The highest profit wins!](https://www.codewars.com/kata/559590633066759614000063/train/python)
+## Description
+<div><h3 id="story">Story</h3>
+<p>Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.</p>
+<h3 id="task">Task</h3>
+<p>Write a function that returns both the minimum and maximum number of the given list/array. </p>
+<h3 id="examples">Examples</h3>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">minMax</span> [<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>] `<span class="cm-variable">shouldBe</span>` (<span class="cm-number">1</span>, <span class="cm-number">5</span>)
+<span class="cm-variable">minMax</span> [<span class="cm-number">2334454</span>,<span class="cm-number">5</span>] `<span class="cm-variable">shouldBe</span>` (<span class="cm-number">5</span>, <span class="cm-number">2334454</span>)
+<span class="cm-variable">minMax</span> [<span class="cm-number">1</span>]         `<span class="cm-variable">shouldBe</span>` (<span class="cm-number">1</span>, <span class="cm-number">1</span>)
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">minMax</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">1</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">minMax</span>([<span class="cm-number">2334454</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">5</span>, <span class="cm-number">2334454</span>]
+<span class="cm-variable">minMax</span>([<span class="cm-number">1</span>])           <span class="cm-operator">==</span> [<span class="cm-number">1</span>, <span class="cm-number">1</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-coffeescript"><span class="cm-variable">minMax</span> <span class="cm-punctuation">[</span><span class="cm-number">1..5</span><span class="cm-punctuation">]</span>      <span class="cm-operator">==</span> <span class="cm-punctuation">[</span><span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">5</span><span class="cm-punctuation">]</span>
+<span class="cm-variable">minMax</span> <span class="cm-punctuation">[</span><span class="cm-number">2334454</span><span class="cm-punctuation">,</span><span class="cm-number">5</span><span class="cm-punctuation">]</span> <span class="cm-operator">==</span> <span class="cm-punctuation">[</span><span class="cm-number">5</span><span class="cm-punctuation">,</span> <span class="cm-number">2334454</span><span class="cm-punctuation">]</span>
+<span class="cm-variable">minMax</span> <span class="cm-punctuation">[</span><span class="cm-number">1</span><span class="cm-punctuation">]</span>         <span class="cm-operator">==</span> <span class="cm-punctuation">[</span><span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">]</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">min_max</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">1</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">min_max</span>([<span class="cm-number">2334454</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">5</span>, <span class="cm-number">2334454</span>]
+<span class="cm-variable">min_max</span>([<span class="cm-number">1</span>])           <span class="cm-operator">==</span> [<span class="cm-number">1</span>, <span class="cm-number">1</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">min_max</span>([<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">1</span>,<span class="cm-number">5</span>]
+<span class="cm-variable">min_max</span>([<span class="cm-number">2334454</span>,<span class="cm-number">5</span>])   <span class="cm-operator">==</span> [<span class="cm-number">5</span>, <span class="cm-number">2334454</span>]
+<span class="cm-variable">min_max</span>([<span class="cm-number">1</span>])           <span class="cm-operator">==</span> [<span class="cm-number">1</span>, <span class="cm-number">1</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>}) <span class="cm-operator">==</span> {<span class="cm-number">1</span>,<span class="cm-number">5</span>}
+<span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">2334454</span>,<span class="cm-number">5</span>}) <span class="cm-operator">==</span> {<span class="cm-number">5</span>, <span class="cm-number">2334454</span>}
+<span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">1</span>}) <span class="cm-operator">==</span> {<span class="cm-number">1</span>, <span class="cm-number">1</span>}
+</code></pre>
+<pre style="display: none;"><code class="language-csharp"><span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">1</span>,<span class="cm-number">2</span>,<span class="cm-number">3</span>,<span class="cm-number">4</span>,<span class="cm-number">5</span>}) <span class="cm-operator">==</span> {<span class="cm-number">1</span>,<span class="cm-number">5</span>}
+<span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">2334454</span>,<span class="cm-number">5</span>}) <span class="cm-operator">==</span> {<span class="cm-number">5</span>, <span class="cm-number">2334454</span>}
+<span class="cm-variable">MinMax</span>.<span class="cm-variable">minMax</span>(<span class="cm-keyword">new</span> <span class="cm-type">int</span>[]{<span class="cm-number">1</span>}) <span class="cm-operator">==</span> {<span class="cm-number">1</span>, <span class="cm-number">1</span>}
+</code></pre>
+<h3 id="remarks">Remarks</h3>
+<p>All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for <code>null</code>, <code>undefined</code> or similar.</p>
+</div>
+<details><summary>Solution</summary><pre><code><span class="cm-keyword">def</span> <span class="cm-def">min_max</span>(<span class="cm-variable">lst</span>):
+    <span class="cm-keyword">return</span> [<span class="cm-builtin">min</span>(<span class="cm-variable">lst</span>), <span class="cm-builtin">max</span>(<span class="cm-variable">lst</span>)]</code></pre></details>

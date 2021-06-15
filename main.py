@@ -1,8 +1,5 @@
-import argparse
-import json
-import os
-import time
-import re
+from collections import Counter
+import argparse, json, os, time, re
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -101,6 +98,13 @@ if __name__ == '__main__':
 
 		with open('assets/json/table.json') as table:
 			table_data = json.load(table)
+
+		# todo: stats
+		stats = {
+			'kata': len(table_data),
+			'kyu': Counter(table_data[i]['kyu'] for i in range(len(table_data))),
+			'lang': Counter(table_data[i]['lang'] for i in range(len(table_data)))
+		}
 
 		index_html = env.get_template('home.html').render(
 			title=f'{getattr(config, "HOME_PAGE_TITLE")}',
