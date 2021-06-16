@@ -99,7 +99,6 @@ if __name__ == '__main__':
 		with open('assets/json/table.json') as table:
 			table_data = json.load(table)
 
-		# todo: stats
 		stats = {
 			'kata': len(table_data),
 			'kyu': Counter(table_data[i]['kyu'] for i in range(len(table_data))),
@@ -108,7 +107,8 @@ if __name__ == '__main__':
 
 		index_html = env.get_template('home.html').render(
 			title=f'{getattr(config, "HOME_PAGE_TITLE")}',
-			table=table_data
+			table=table_data,
+			stats=stats,
 		)
 
 		with open(f'index.html', 'w', encoding='utf-8') as out:
