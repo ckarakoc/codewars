@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extract the domain name from a URL</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/514a024011ea4fb54200004b/train/python">Extract the domain name from a URL</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:</p>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">domain_name</span>(<span class="cm-string">"http://github.com/carbonfive/raygun"</span>) <span class="cm-operator">==</span> <span class="cm-string">"github"</span> 
+<span class="cm-variable">domain_name</span>(<span class="cm-string">"http://www.zombie-bites.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"zombie-bites"</span>
+<span class="cm-variable">domain_name</span>(<span class="cm-string">"https://www.cnet.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"cnet"</span>
+</code></pre>
+<pre><code class="language-python"><span class="cm-variable">domain_name</span>(<span class="cm-string">"http://github.com/carbonfive/raygun"</span>) <span class="cm-operator">==</span> <span class="cm-string">"github"</span> 
+<span class="cm-variable">domain_name</span>(<span class="cm-string">"http://www.zombie-bites.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"zombie-bites"</span>
+<span class="cm-variable">domain_name</span>(<span class="cm-string">"https://www.cnet.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"cnet"</span>
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">domainName</span>(<span class="cm-string">"http://github.com/carbonfive/raygun"</span>) <span class="cm-operator">==</span> <span class="cm-string">"github"</span> 
+<span class="cm-variable">domainName</span>(<span class="cm-string">"http://www.zombie-bites.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"zombie-bites"</span>
+<span class="cm-variable">domainName</span>(<span class="cm-string">"https://www.cnet.com"</span>) <span class="cm-operator">==</span> <span class="cm-string">"cnet"</span>
+</code></pre>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">import</span> <span class="cm-variable">re</span>
+<span class="cm-keyword">def</span> <span class="cm-def">domain_name</span>(<span class="cm-variable">url</span>):
+    <span class="cm-keyword">return</span> <span class="cm-variable">re</span>.<span class="cm-property">sub</span>(<span class="cm-string">'https?://|www\.'</span>, <span class="cm-string">''</span>, <span class="cm-variable">url</span>).<span class="cm-property">split</span>(<span class="cm-string">'.'</span>, <span class="cm-number">1</span>)[<span class="cm-number">0</span>]</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
