@@ -71,16 +71,16 @@ if __name__ == '__main__':
 			solution=solution
 		)
 
-		with open(f'{path}solution.html', 'w') as out:
-			out.write(_html)
+		with open(f'{path}solution.html', 'w', encoding='utf-8') as out:
+			out.write(str(_html))
 
 		# Make the solution
-		with open(f'{path}solution{ext(proglang)[0]}', 'w') as out:
+		with open(f'{path}solution{ext(proglang)[0]}', 'w', encoding='utf-8') as out:
 			out.write(str(solution.text))
 
 		# Make the Markdown page
 		_markdown = f'# [{title}]({url})\n## Description\n{description}\n<details><summary>Solution</summary>{solution.prettify()}</details>'
-		with open(f'{path}README.md', 'w') as out:
+		with open(f'{path}README.md', 'w', encoding='utf-8') as out:
 			out.write(str(_markdown))
 
 		# Make the index.html page
