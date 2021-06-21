@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Determine offspring sex based on genes XX and XY chromosomes</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/56530b444e831334c0000020/train/javascript">Determine offspring sex based on genes XX and XY chromosomes</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>The male gametes or sperm cells in humans and other mammals are heterogametic and contain one of two types of sex chromosomes. They are either X or Y. The female gametes or eggs however, contain only the X sex chromosome and are homogametic.</p>
+<p>The sperm cell determines the sex of an individual in this case. If a sperm cell containing an X chromosome fertilizes an egg, the resulting zygote will be XX or female. If the sperm cell contains a Y chromosome, then the resulting zygote will be XY or male.</p>
+<p>Determine if the sex of the offspring will be male or female based on the X or Y chromosome present in the male's sperm.</p>
+<p>If the sperm contains the X chromosome, return "Congratulations! You're going to have a daughter.";
+If the sperm contains the Y chromosome, return "Congratulations! You're going to have a son.";</p>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">function</span> <span class="cm-def">chromosomeCheck</span>(<span class="cm-def">sperm</span>) {
+  <span class="cm-keyword">if</span> (<span class="cm-variable-2">sperm</span>.<span class="cm-property">endsWith</span>(<span class="cm-string">'Y'</span>))
+    <span class="cm-keyword">return</span> <span class="cm-string">"Congratulations! You're going to have a son."</span>;
+  <span class="cm-keyword">return</span> <span class="cm-string">"Congratulations! You're going to have a daughter."</span>;
+}</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
