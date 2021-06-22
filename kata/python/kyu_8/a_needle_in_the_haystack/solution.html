@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Needle in the Haystack</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/56676e8fabd2d1ff3000000c/train/python">A Needle in the Haystack</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Can you find the needle in the haystack?</p>
+<p>Write a function <code>findNeedle()</code> that takes an <code>array</code> full of junk but containing one <code>"needle"</code></p>
+<p>After your function finds the needle it should return a message (as a string) that says:</p>
+<p><code>"found the needle at position "</code> plus the <code>index</code> it found the needle, so: </p>
+<pre><code class="language-python"><span class="cm-variable">find_needle</span>([<span class="cm-string">'hay'</span>, <span class="cm-string">'junk'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'moreJunk'</span>, <span class="cm-string">'needle'</span>, <span class="cm-string">'randomJunk'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-ruby"><span class="cm-variable">find_needle</span>([<span class="cm-string">'hay'</span>, <span class="cm-string">'junk'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'moreJunk'</span>, <span class="cm-string">'needle'</span>, <span class="cm-string">'randomJunk'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-elixir"><span class="cm-variable">find_needle</span>([<span class="cm-string">'hay'</span>, <span class="cm-string">'junk'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'moreJunk'</span>, <span class="cm-string">'needle'</span>, <span class="cm-string">'randomJunk'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-javascript"><span class="cm-variable">findNeedle</span>([<span class="cm-string">'hay'</span>, <span class="cm-string">'junk'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'moreJunk'</span>, <span class="cm-string">'needle'</span>, <span class="cm-string">'randomJunk'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-typescript"><span class="cm-variable">findNeedle</span>([<span class="cm-string">'hay'</span>, <span class="cm-string">'junk'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'hay'</span>, <span class="cm-string">'moreJunk'</span>, <span class="cm-string">'needle'</span>, <span class="cm-string">'randomJunk'</span>])
+</code></pre>
+<pre style="display: none;"><code class="language-java"><span class="cm-variable">findNeedle</span>(<span class="cm-keyword">new</span> <span class="cm-type">Object</span>[] {<span class="cm-string">"hay"</span>, <span class="cm-string">"junk"</span>, <span class="cm-string">"hay"</span>, <span class="cm-string">"hay"</span>, <span class="cm-string">"moreJunk"</span>, <span class="cm-string">"needle"</span>, <span class="cm-string">"randomJunk"</span>})
+</code></pre>
+<pre style="display: none;"><code class="language-haskell"><span class="cm-variable">findNeedle</span> [<span class="cm-string">"hay"</span>, <span class="cm-string">"junk"</span>, <span class="cm-string">"hay"</span>, <span class="cm-string">"hay"</span>, <span class="cm-string">"moreJunk"</span>, <span class="cm-string">"needle"</span>, <span class="cm-string">"randomJunk"</span>]
+</code></pre>
+<pre style="display: none;"><code class="language-racket"><span class="cm-bracket">(</span><span class="cm-variable">find-needle</span> <span class="cm-atom">'</span><span class="cm-atom">(</span><span class="cm-atom">"</span><span class="cm-atom">hay"</span> <span class="cm-atom">"</span><span class="cm-atom">junk"</span> <span class="cm-atom">"</span><span class="cm-atom">hay"</span> <span class="cm-atom">"</span><span class="cm-atom">hay"</span> <span class="cm-atom">"</span><span class="cm-atom">moreJunk"</span> <span class="cm-atom">"</span><span class="cm-atom">needle"</span><span class="cm-atom">,</span><span class="cm-atom">"</span><span class="cm-atom">randomJunk"</span><span class="cm-atom">)</span><span class="cm-bracket">)</span>
+</code></pre>
+<p>should return <code>"found the needle at position 5"</code></p>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">def</span> <span class="cm-def">find_needle</span>(<span class="cm-variable">haystack</span>):
+    <span class="cm-keyword">return</span> <span class="cm-string">f"found the needle at position </span>{<span class="cm-variable">haystack</span>.<span class="cm-property">index</span>(<span class="cm-string">'needle'</span>)}<span class="cm-string">"</span></code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
