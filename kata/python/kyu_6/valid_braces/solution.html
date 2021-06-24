@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valid Braces</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/5277c8a221e209d3f6000b56/train/python">Valid Braces</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return <code>true</code> if the string is valid, and <code>false</code> if it's invalid.</p>
+<p>This Kata is similar to the <a href="https://www.codewars.com/kata/valid-parentheses" target="_blank">Valid Parentheses</a> Kata, but introduces new characters: brackets <code>[]</code>, and curly braces <code>{}</code>. Thanks to <code>@arnedag</code> for the idea!</p>
+<p>All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: <code>()[]{}</code>. </p>
+<h3 id="what-is-considered-valid">What is considered Valid?</h3>
+<p>A string of braces is considered valid if all braces are matched with the correct brace.</p>
+<h2 id="examples">Examples</h2>
+<pre><code>"(){}[]"   =&gt;  True
+"([{}])"   =&gt;  True
+"(}"       =&gt;  False
+"[(])"     =&gt;  False
+"[({})](]" =&gt;  False
+</code></pre>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">def</span> <span class="cm-def">validBraces</span>(<span class="cm-variable">string</span>):
+    <span class="cm-variable">braces</span> <span class="cm-operator">=</span> [<span class="cm-string">"{}"</span>, <span class="cm-string">"[]"</span>, <span class="cm-string">"()"</span>]
+    <span class="cm-keyword">for</span> <span class="cm-variable">_</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-builtin">int</span>(<span class="cm-builtin">len</span>(<span class="cm-variable">string</span>) <span class="cm-operator">/</span> <span class="cm-number">2</span>)):
+        <span class="cm-keyword">for</span> <span class="cm-variable">brace</span> <span class="cm-keyword">in</span> <span class="cm-variable">braces</span>:
+            <span class="cm-variable">string</span> <span class="cm-operator">=</span> <span class="cm-variable">string</span>.<span class="cm-property">replace</span>(<span class="cm-variable">brace</span>, <span class="cm-string">''</span>)
+        <span class="cm-keyword">if</span> <span class="cm-keyword">not</span> <span class="cm-variable">string</span>:
+            <span class="cm-keyword">return</span> <span class="cm-keyword">True</span>
+    <span class="cm-keyword">return</span> <span class="cm-keyword">False</span></code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
