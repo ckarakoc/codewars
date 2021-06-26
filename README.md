@@ -42,6 +42,8 @@ Example usage: `python main.py --url 'https://www.codewars.com/kata/56bc28ad5bda
 ## TODO
 
 - Implement logging properly
+- Preprocess the README files a bit more
+- Preprocess the html properly (i.e. remove display:none tags. Make it a bit more beautifull).
 <br>
 <br>
 
