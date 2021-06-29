@@ -2,6 +2,12 @@
     /* todo: 8em value should be dynamic in Javascript */
     height: calc(100vh - 8em);
     overflow: auto;
+    scrollbar-width: none; /* hide scrollbar - Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* make scrollbar transparent - Chrome */
 }
 
 table.content-table {
