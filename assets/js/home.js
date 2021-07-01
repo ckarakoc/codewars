@@ -7,7 +7,7 @@ let tBodyRows = tbody.getElementsByTagName('tr');
 
 let sortedIdx = -1
 
-
+// todo: make up-down arrow with the sorting
 sortable = {
     init: function () {
         sortable.sortColumn(0);
