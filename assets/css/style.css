@@ -50,15 +50,15 @@ h4 {
 }
 
 .heading a:link, .heading a:visited {
-  color: #00adb5;
+    color: #00adb5;
 }
 
 .heading a:hover {
-  color: #393e46;
+    color: #393e46;
 }
 
 .heading a:active {
-  color: blue;
+    color: blue;
 }
 
 .description {
@@ -75,6 +75,11 @@ h4 {
     font-family: Georgia, sans-serif;
     font-size: 1.5em;
     /*width: 90%;*/
+}
+
+.description ul {
+    font-family: Georgia, sans-serif;
+    font-size: 1.2em;
 }
 
 .content pre code {
