@@ -57,6 +57,8 @@ if __name__ == '__main__':
 		title = soup_game_title.find('h4').text
 		description = soup.find(id='description')
 		description.attrs.clear()
+		for hidden in description.find_all(style=re.compile(r'display:\s*none')):
+			hidden.decompose()
 		solution = soup.find('li', {'data-tab': 'solutions'}).find_all('pre', {'lang': proglang})[-1]
 		solution.attrs.clear()
 
