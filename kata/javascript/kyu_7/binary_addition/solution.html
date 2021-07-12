@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Addition</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/551f37452ff852b7bd000139/train/javascript">Binary Addition</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.</p>
+<p>The binary number returned should be a string.</p>
+<p>Examples:</p>
+<pre><code>add_binary(1, 1) == "10" (1 + 1 = 2 in decimal or 10 in binary)
+add_binary(5, 9) == "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+</code></pre>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">function</span> <span class="cm-def">addBinary</span>(<span class="cm-def">a</span>,<span class="cm-def">b</span>) {
+  <span class="cm-keyword">return</span> (<span class="cm-variable-2">a</span><span class="cm-operator">+</span><span class="cm-variable-2">b</span>).<span class="cm-property">toString</span>(<span class="cm-number">2</span>);
+}</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>

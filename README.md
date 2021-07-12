@@ -44,6 +44,8 @@ Example usage: `python main.py --url 'https://www.codewars.com/kata/56bc28ad5bda
 - Implement logging properly
 - Preprocess the README files a bit more
 - Triangles on sortable table (▲▼▾▴)
+- Make it so that updating already created (older) html/README files will be easier. 
+- Change the cdn stylesheets to be local, so that you can update it easier.
 <br>
 <br>
 
