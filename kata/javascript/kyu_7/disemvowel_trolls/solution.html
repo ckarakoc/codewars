@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disemvowel Trolls</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/52fba66badcd10859f00097e/train/javascript">Disemvowel Trolls</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Trolls are attacking your comment section!</p>
+<p>A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.</p>
+<p>Your task is to write a function that takes a string and return a new string with all vowels removed.</p>
+<p>For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".</p>
+<p>Note: for this kata <code>y</code> isn't considered a vowel.</p>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">function</span> <span class="cm-def">disemvowel</span>(<span class="cm-def">str</span>) {
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">str</span>.<span class="cm-property">replace</span>(<span class="cm-string-2">/[aeiou]/gi</span>, <span class="cm-string">''</span>);
+}</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
