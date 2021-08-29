@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reversed Words</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/51c8991dee245d7ddf00000e/train/javascript">Reversed Words</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Complete the solution so that it reverses all of the words within the string passed in. </p>
+<p>Example:</p>
+<pre><code>"The greatest victory is that which requires no battle" --&gt; "battle no requires which that is victory greatest The"
+</code></pre>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">function</span> <span class="cm-def">reverseWords</span>(<span class="cm-def">str</span>){
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">str</span>.<span class="cm-property">split</span>(<span class="cm-string">' '</span>).<span class="cm-property">reverse</span>().<span class="cm-property">join</span>(<span class="cm-string">' '</span>);
+}</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
