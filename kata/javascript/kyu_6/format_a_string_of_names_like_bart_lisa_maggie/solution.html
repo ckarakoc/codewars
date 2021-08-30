@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Format a string of names like 'Bart, Lisa & Maggie'.</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/stackoverflow-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link type="text/css" rel="stylesheet" href="../../../../assets/css/style.css">
+    <script type="text/javascript" src="../../../../assets/js/script.js"></script>
+</head>
+<body>
+<div class="grid-outer">
+    <div class="container">
+        <div class="heading">
+            <h1><a href="https://www.codewars.com/kata/53368a47e38700bd8300030d/train/javascript">Format a string of names like 'Bart, Lisa & Maggie'.</a></h1>
+        </div>
+        <div class="description">
+            <p><div><p>Given: an array containing hashes of names</p>
+<p>Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.</p>
+<p>Example:</p>
+
+
+<pre><code class="language-javascript"><span class="cm-variable">list</span>([ {<span class="cm-property">name</span>: <span class="cm-string">'Bart'</span>}, {<span class="cm-property">name</span>: <span class="cm-string">'Lisa'</span>}, {<span class="cm-property">name</span>: <span class="cm-string">'Maggie'</span>} ])
+<span class="cm-comment">// returns 'Bart, Lisa &amp; Maggie'</span>
+
+<span class="cm-variable">list</span>([ {<span class="cm-property">name</span>: <span class="cm-string">'Bart'</span>}, {<span class="cm-property">name</span>: <span class="cm-string">'Lisa'</span>} ])
+<span class="cm-comment">// returns 'Bart &amp; Lisa'</span>
+
+<span class="cm-variable">list</span>([ {<span class="cm-property">name</span>: <span class="cm-string">'Bart'</span>} ])
+<span class="cm-comment">// returns 'Bart'</span>
+
+<span class="cm-variable">list</span>([])
+<span class="cm-comment">// returns ''</span>
+</code></pre>
+
+<p>Note: all the hashes are pre-validated and will only contain A-Z, a-z, '-' and '.'.</p>
+</div></p>
+        </div>
+        <h2 id="sol-h2">Solution</h2>
+        <div class="content">
+            <pre><code><span class="cm-keyword">function</span> <span class="cm-def">list</span>(<span class="cm-def">names</span>){
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">names</span>.<span class="cm-property">map</span>(<span class="cm-def">p</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">p</span>.<span class="cm-property">name</span>).<span class="cm-property">join</span>(<span class="cm-string">', '</span>).<span class="cm-property">replace</span>(<span class="cm-string-2">/,(?=[^,]*$)/</span>, <span class="cm-string">' &amp;'</span>); <span class="cm-comment">// (?= ...) === look-ahead</span>
+}</code></pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
